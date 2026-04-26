@@ -67,21 +67,21 @@ Firmware for ESP32-C3 that reads CO₂, temperature, and humidity from an **SCD4
    idf.py -p PORT flash monitor
    ```
 ## How It Works
-I2C bus is initialised at 100 kHz with pull‑ups.
+-I2C bus is initialised at 100 kHz with pull‑ups.
 
-SCD41 is set to periodic measurement mode (0x21B1).
+-SCD41 is set to periodic measurement mode (0x21B1).
 
-Every 2 seconds the task sensor_task:
+Every 2 seconds the task _sensor_task_:
 
-Takes the I2C mutex
+--Takes the I2C mutex
 
-Checks if new data is ready (scd41_data_ready_check)
+--Checks if new data is ready (scd41_data_ready_check)
 
-Reads CO₂, temperature and humidity with CRC checks
+--Reads CO₂, temperature and humidity with CRC checks
 
-Updates a framebuffer (RGB565) with text: white labels, cyan values
+--Updates a framebuffer (RGB565) with text: white labels, cyan values
 
-Flushes the framebuffer to the ST7735S display
+--Flushes the framebuffer to the ST7735S display
 
 The display orientation is fixed by calling swap_xy, mirror and set_gap – adjust if your panel is mounted differently.
 
