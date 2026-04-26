@@ -90,7 +90,7 @@ main.c – startup, framebuffer, font, display driver initialisation, main task.
 
 scd41_drv.c/h – low‑level I2C driver for SCD41: init, CRC check, read measurement, start periodic mode.
 
-Font font8x16 – 8×16 pixel bitmap characters (ASCII 32–126).
+Font – 8×16 pixel bitmap characters (ASCII 32–126).
 
 ## Notes
 
