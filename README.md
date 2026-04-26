@@ -1,4 +1,3 @@
-# esp32c3-co2-sensor
 
 # Air Quality Monitor – ESP32-C3 + SCD41 + ST7735S
 
