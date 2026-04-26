@@ -51,7 +51,7 @@ Firmware for ESP32-C3 that reads CO₂, temperature, and humidity from an **SCD4
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/your-username/co2-monitor.git
+   git clone https://github.com/Courtesyl/esp32c3-co2-sensor.git
    cd co2-monitor
    ```
 2. Set the target (if not already C3):
