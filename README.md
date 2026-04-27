@@ -102,7 +102,7 @@ The framebuffer is 160×80×2 = 25.6 kB – fits comfortably in ESP32‑C3 RAM.
 
 ## License
 
-MIT
+MIT – see LICENSE file.
 
 ## Author
 Courtesyl
