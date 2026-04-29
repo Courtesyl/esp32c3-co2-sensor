@@ -43,7 +43,7 @@ Firmware for ESP32-C3 that reads CO₂, temperature, and humidity from an **SCD4
 
 ## Dependencies
 
-- ESP‑IDF v4.4 or newer
+- ESP‑IDF v4.5 or newer (only ESP-IDF v5.5.2 tested though)
 - Standard ESP‑IDF components: `driver/i2c`, `driver/spi_master`, `esp_lcd` (includes ST7735 driver)
 
 ## Build & Flash
