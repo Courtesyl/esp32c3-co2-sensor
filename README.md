@@ -1,5 +1,5 @@
 
-# Air Quality Monitor – ESP32-C3 + SCD41 + ST7735S
+# CO2 Monitor – ESP32-C3 + SCD41 + ST7735S
 
 Firmware for ESP32-C3 that reads CO₂, temperature, and humidity from an **SCD41** sensor and displays the values on an **ST7735S** colour LCD (160×80).
 
@@ -51,7 +51,6 @@ Firmware for ESP32-C3 that reads CO₂, temperature, and humidity from an **SCD4
 1. Clone the repository:
    ```bash
    git clone https://github.com/Courtesyl/esp32c3-co2-sensor.git
-   cd co2-monitor
    ```
 2. Set the target (if not already C3):
    ```bash
@@ -86,19 +85,21 @@ The display orientation is fixed by calling swap_xy, mirror and set_gap – adju
 
 ## Code Structure
 
-main.c – startup, framebuffer, font, display driver initialisation, main task.
+**main.c** – startup, framebuffer, font, display driver initialisation, main task.
 
-scd41_drv.c/h – low‑level I2C driver for SCD41: init, CRC check, read measurement, start periodic mode.
+**scd41_drv.c/h** – low‑level I2C driver for SCD41: init, CRC check, read measurement, start periodic mode.
 
-Font – 8×16 pixel bitmap characters (ASCII 32–126).
+**Font** – 8×16 pixel bitmap ASCII characters.
 
 ## Notes
 
-First few measurements may be delayed – the sensor needs time to warm up.
+-First few measurements may be delayed – the sensor needs time to warm up.
 
-Colour format: RGB565 (0xFFFF = white, 0x07FF = cyan, 0x0000 = black).
+-Colour format: RGB565 (0xFFFF = white, 0x07FF = cyan, 0x0000 = black).
 
-The framebuffer is 160×80×2 = 25.6 kB – fits comfortably in ESP32‑C3 RAM.
+-The framebuffer is 160×80×2 = 25.6 kB – fits comfortably in ESP32‑C3 RAM.
+
+-Temperature and humidity values cannot be trusted entirely - they do not depict the presice value (see SCD41 datasheet)
 
 ## License
 
